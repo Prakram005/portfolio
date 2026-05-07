@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #06080d;
+  --foreground: #f4f7fb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-space-grotesk), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #6ee7d8;
+  color: #06080d;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 18% 12%, rgba(110, 231, 216, 0.16), transparent 28%),
+    radial-gradient(circle at 76% 18%, rgba(240, 164, 95, 0.12), transparent 26%),
+    linear-gradient(180deg, #06080d 0%, #0b1018 46%, #05060a 100%);
+}
+
+.font-display {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+}
+
+.text-glow {
+  text-shadow: 0 0 30px rgba(110, 231, 216, 0.24);
+}
+
+.theme-transition {
+  transition:
+    color 500ms ease,
+    background-color 500ms ease,
+    border-color 500ms ease,
+    box-shadow 500ms ease,
+    transform 500ms ease;
+}
